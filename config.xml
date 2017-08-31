@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<control  xmlns="http://www.askia.com/2.1.0/ADCSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.askia.com/2.1.0/ADCSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.1.0/ADCSchema.xsd"
+          version="2.1.0"
+          askiaCompat="5.4.2">
+  <info>
+    <name>textHighlight</name>
+    <guid>9c7bb341-8653-48af-ba8c-35f58ae4d594</guid>
+    <version>1.0.0</version>
+    <date>2017-05-31</date>
+    <description><![CDATA[]]></description>
+    <company>Askia</company>
+    <author><![CDATA[Clément Salomon <clement@askia.com>]]></author>
+    <site>https://www.askia.com/</site>
+    <helpURL></helpURL>
+    <categories>
+      <category>General</category>
+    </categories>
+    <constraints>
+      <constraint on="questions" chapter="false" single="true" multiple="false" numeric="false" date="false" open="false" requireParentLoop="true" />
+      <constraint on="controls" responseblock="true" label="false" textbox="false" checkbox="false" listbox="false" radiobutton="false" />
+      <constraint on="responses" max="*" min="*" />
+    </constraints>
+  </info>
+  <outputs defaultOutput="default">
+    <output id="default">
+      <description><![CDATA[Default output]]></description>
+      <condition><![CDATA[(Browser.Support("javascript"))]]></condition>
+      <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
+      <content fileName="standard.html" type="html" mode="dynamic" position="none" />
+      <content fileName="default.css" type="css" mode="dynamic" position="head" />
+      <content fileName="flat-smiley-adc-happy-plus.png" type="image" mode="static" position="none" />
+      <content fileName="flat-smiley-adc-medium.png" type="image" mode="static" position="none" />
+      <content fileName="flat-smiley-adc-unhappy-plus.png" type="image" mode="static" position="none" />
+      <content fileName="bin.png" type="image" mode="static" position="none" />
+      <content fileName="garbage.png" type="image" mode="static" position="none" />
+      <content fileName="default.js" type="javascript" mode="dynamic" position="head" />
+    </output>
+    <output id="fallback">
+      <description><![CDATA[Fallback when the browser doesn't support Javascript]]></description>
+      <condition><![CDATA[Not(Browser.Support("javascript"))]]></condition>
+      <content fileName="single_fallback.html" type="html" mode="dynamic" position="none" />
+      <content fileName="multiple_fallback.html" type="html" mode="dynamic" position="none" />
+      <content fileName="default_fallback.html" type="html" mode="dynamic" position="placeholder" />
+    </output>
+  </outputs>
+  <properties>
+    <category id="general" name="General">
+      <property xsi:type="standardProperty" id="likeOpt" name="Like Option" type="string" mode="dynamic" require="false" visible="true">
+        <description><![CDATA[To sets the option if the num of response is equal to 1.]]></description>
+        <value></value>
+        <options>
+          <option value="1" text="Like" />
+          <option value="-1" text="Dislike" />
+        </options>
+      </property>
+    </category>
+    <category id="color" name="Colors">
+      <property xsi:type="standardProperty" id="likeColor" name="Like Color" type="color" mode="static" require="false" visible="true" colorFormat="rgb">
+        <description><![CDATA[sets the color of the like highlight.]]></description>
+        <value><![CDATA[144,238,144]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="neutralColor" name="Neutral Color" type="color" mode="static" require="false" visible="true" colorFormat="rgb">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[173,216,230]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="dislikeColor" name="Dislike Color" type="color" mode="static" require="false" visible="true" colorFormat="rgb">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[240,128,128]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="hoverColor" name="Hover Color" type="color" mode="static" require="false" visible="true" colorFormat="rgb">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[254,255,224]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="clickedColor" name="Clicked Color" type="color" mode="static" require="false" visible="true" colorFormat="rgb">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[254,255,224]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="sentenceColor" name="Sentence Color" type="color" mode="static" require="false" visible="true" colorFormat="rgb">
+        <description><![CDATA[]]></description>
+        <value><![CDATA[240,248,255]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="bgColor" name="Background Color" type="color" mode="static" require="false" visible="true" colorFormat="rgb">
+        <description><![CDATA[Sets the background color]]></description>
+        <value><![CDATA[255,255,255]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="fontColor" name="Font Color" type="color" mode="static" require="false" visible="true" colorFormat="rgb">
+        <description><![CDATA[Sets the font color.]]></description>
+        <value><![CDATA[0,0,0]]></value>
+      </property>
+    </category>
+  </properties>
+</control>

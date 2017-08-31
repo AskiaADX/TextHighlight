@@ -1,0 +1,8 @@
+<div id="adc_{%= CurrentQuestion.Id %}" class="adc-default">
+    Fallback adc
+{% If CurrentQuestion.Type = "single" Then %}
+    {%:= CurrentADC.GetContent("dynamic/single_fallback.html").ToText() %}
+{% ElseIf CurrentQuestion.Type = "multiple" Then %}
+    {%:= CurrentADC.GetContent("dynamic/multiple_fallback.html").ToText() %}
+{% EndIf %}
+</div>

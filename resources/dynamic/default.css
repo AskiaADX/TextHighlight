@@ -1,0 +1,169 @@
+html {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/*  main style of the adc */
+
+.adc-textHighlight {
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+/*  style of the div where the text is */
+
+.adc-textHighlight .inputText {
+    position: relative;
+    cursor: pointer;
+}
+
+
+/* general style of the buttons */
+
+.adc-textHighlight button {
+    margin: 5px 5px 5px 5px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-style: solid;
+    border-color: #555;
+    background-color: #555;
+    background-repeat: no-repeat; 
+}
+
+
+/* define the background image of the buttons (image have to be 30x30px) */
+
+.adc-textHighlight .likeIMG {
+    background-image: url("{%= CurrentADC.URLTo("static/flat-smiley-adc-happy-plus.png") %}");
+}
+
+.adc-textHighlight .dislikeIMG {
+    background-image: url("{%= CurrentADC.URLTo("static/flat-smiley-adc-unhappy-plus.png") %}");
+}
+
+.adc-textHighlight .neutralIMG {
+    background-image: url("{%= CurrentADC.URLTo("static/flat-smiley-adc-medium.png") %}");
+}
+
+.adc-textHighlight .removeIMG {
+    background-image: url("{%= CurrentADC.URLTo("static/bin.png") %}");
+}
+
+
+/* smooth transition when changing the background color of the text */
+
+#adc_{%= CurrentADC.InstanceId %} .inputText span {
+    transition: background-color 0.5s;
+    color: rgb({%= CurrentADC.PropValue("fontColor")%});
+}
+
+
+/* The actual popup (appears on top) */
+
+.adc-textHighlight .popuptext {
+    visibility: hidden;
+    color: #fff;
+    background-color: #555;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px 5px 5px;
+    position: absolute;
+    z-index: 1;
+    cursor: default;
+}
+
+
+/* Popup arrow */
+
+.adc-textHighlight .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+/* show the popup */
+
+.adc-textHighlight .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s
+}
+
+
+/* Add animation (fade in the popup) */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#adc_{%= CurrentADC.InstanceId %} h1 {
+            color: #444;
+            font-size: 30px;
+        }
+        
+        #adc_{%= CurrentADC.InstanceId %} .inputText {
+        	font-size: 20px;
+            border: #000000 solid 1px;
+            padding: 10px;
+            color: rgb({%= CurrentADC.PropValue("fontColor")%});
+            background-color : rgb({%= CurrentADC.PropValue("bgColor")%});
+        }
+        
+        /* define the background color of the buttons and the clicked spans */
+        #adc_{%= CurrentADC.InstanceId %} .like {
+            background-color: rgb({%= CurrentADC.PropValue("likeColor") %});
+        }
+        
+        #adc_{%= CurrentADC.InstanceId %} .dislike {
+            background-color: rgb({%= CurrentADC.PropValue("dislikeColor") %});
+        }
+        
+        #adc_{%= CurrentADC.InstanceId %} .neutral {
+            background-color: rgb({%= CurrentADC.PropValue("neutralColor") %});
+        }
+        
+        #adc_{%= CurrentADC.InstanceId %} .sentence{
+            background-color: rgb({%= CurrentADC.PropValue("sentenceColor") %});
+        }
+        
+        #adc_{%= CurrentADC.InstanceId %} .clicked{
+            background-color: rgb({%= CurrentADC.PropValue("clickedColor") %});
+        }
+        
+        /* text's background color when mouseover */
+        #adc_{%= CurrentADC.InstanceId %} .inputText .sentence:hover {
+            background-color: rgb({%= CurrentADC.PropValue("hoverColor") %});
+        }

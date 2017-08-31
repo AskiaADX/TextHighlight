@@ -1,0 +1,28 @@
+{%
+Dim i
+%}
+
+<div class="inputText">
+    {%For i = 1 To CurrentQuestion.ParentLoop.AllIterations.Count %}
+    <span class="sentence">{%:= CurrentQuestion.ParentLoop.AvailableResponses[i].Caption.ToString() %}</span> 
+    {% Next %}
+</div>
+
+    {%For i = 1 To CurrentQuestion.ParentLoop.AllIterations.Count %}
+    	<input type="hidden" name="{%= CurrentQuestion.Iteration(i).InputName()%}" value="{%= CurrentQuestion.Iteration(i).InputValue()%}" />
+    {% Next %}
+
+<script>
+    (function() {
+        var textHighlight1 = new TextHighlight({adcID:"adc_{%= CurrentADC.InstanceId %}",
+                                                option: {% If CurrentQuestion.AvailableResponses.Count > 1 Then%}
+                                                				{%= CurrentQuestion.AvailableResponses.Count%}
+                                                			{% Else%}
+                                                				{%= CurrentADC.PropValue("likeOpt") %}
+                                                			{%EndIf%},
+                                                values:[{% For i=1 To CurrentQuestion.AvailableResponses.Count%}
+                                                				{%= CurrentQuestion.AvailableResponses[i].InputValue() %}, 
+                                                			{%Next%}
+                                                ]});
+    }());
+</script>
