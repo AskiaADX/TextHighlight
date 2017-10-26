@@ -1,3 +1,13 @@
 <div id="adc_{%= CurrentADC.InstanceId %}" class="adc-textHighlight">
-    {%:= CurrentADC.GetContent("dynamic/standard.html").ToText() %}
+{%
+Dim i
+%}
+    <div class="inputText">
+        {%For i = 1 To CurrentQuestion.ParentLoop.AllIterations.Count %}
+        <span class="sentence">{%:= CurrentQuestion.ParentLoop.AvailableResponses[i].Caption.ToString() %}</span> 
+        {% Next %}
+    </div>
+    {%For i = 1 To CurrentQuestion.ParentLoop.AllIterations.Count %}
+    <input type="hidden" name="{%= CurrentQuestion.Iteration(i).InputName()%}" value="{%= CurrentQuestion.Iteration(i).InputValue()%}" />
+    {% Next %}
 </div>

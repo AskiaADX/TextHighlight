@@ -1,0 +1,102 @@
+html {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/*  main style of the adc */
+
+.adc-textHighlight {
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+/*  style of the div where the text is */
+
+.adc-textHighlight .inputText {
+    position: relative;
+    cursor: pointer;
+}
+
+
+/* general style of the buttons */
+
+.adc-textHighlight button {
+    margin: 5px 5px 5px 5px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-style: solid;
+    border-color: #555;
+    background-color: #555;
+    background-repeat: no-repeat; 
+}
+
+/* The actual popup (appears on top) */
+
+.adc-textHighlight .popuptext {
+    visibility: hidden;
+    color: #fff;
+    background-color: #555;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px 5px 5px;
+    position: absolute;
+    z-index: 1;
+    cursor: default;
+}
+
+
+/* Popup arrow */
+
+.adc-textHighlight .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+/* show the popup */
+
+.adc-textHighlight .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s
+}
+
+
+/* Add animation (fade in the popup) */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
