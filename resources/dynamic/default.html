@@ -3,11 +3,11 @@
 Dim i
 %}
     <div class="inputText">
-        {%For i = 1 To CurrentQuestion.ParentLoop.AllIterations.Count %}
-        <span class="sentence">{%:= CurrentQuestion.ParentLoop.AvailableResponses[i].Caption.ToString() %}</span> 
+        {%For i = 1 To CurrentQuestion.ParentLoop.Answers.Count %}
+        <span class="sentence">{%:= CurrentQuestion.ParentLoop.Answers[i].Caption.ToString() %}</span> 
         {% Next %}
     </div>
-    {%For i = 1 To CurrentQuestion.ParentLoop.AllIterations.Count %}
-    <input type="hidden" name="{%= CurrentQuestion.Iteration(i).InputName()%}" value="{%= CurrentQuestion.Iteration(i).InputValue()%}" />
+    {%For i = 1 To CurrentQuestion.ParentLoop.Answers.Count %}
+    <input type="hidden" name="{%= CurrentQuestion.Iteration(CurrentQuestion.ParentLoop.Answers[i].Index).InputName()%}" value="{%= CurrentQuestion.Iteration(CurrentQuestion.ParentLoop.Answers[i].Index).InputValue()%}" />
     {% Next %}
 </div>
