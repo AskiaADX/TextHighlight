@@ -88,6 +88,17 @@
     }
 
     /**
+    * Add span to the button for web accessibility
+    * @param {HTMLElement} button The button which needs a  span
+    */
+    function addSpan(button) {
+       var span = document.createElement("span");
+        span.hidden=true;
+        span.innerHTML ="Button";
+        button.appendChild(span);
+    }
+    
+    /**
      * Add the buttons to the popup
      * @param {HTMLElement} popup  The container of the popup
      * @param {number} option Option which defines the number of buttons
@@ -99,9 +110,13 @@
             buttonR = document.createElement("button");
 
         buttonD.className = "dislikeIMG";
+        addSpan(buttonD);
         buttonL.className = "likeIMG";
+        addSpan(buttonL);
         buttonN.className = "neutralIMG";
+        addSpan(buttonN);
         buttonR.className = "removeIMG";
+        addSpan(buttonR);
 
         if (option == 3) {
             popup.appendChild(buttonL);

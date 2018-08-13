@@ -7,9 +7,10 @@
   <info>
     <name>TextHighlight</name>
     <guid>9c7bb341-8653-48af-ba8c-35f58ae4d594</guid>
-    <version>2.0.1</version>
+    <version>2.0.0</version>
     <date>2017-05-31</date>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[
+		v2.0.2 - Added function to add hidden span to button in TextHighlight.js]]></description>
     <company>Askia</company>
     <author><![CDATA[Clément Salomon <clement@askia.com>]]></author>
     <site>https://www.askia.com/</site>
