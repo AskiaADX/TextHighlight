@@ -10,7 +10,8 @@
     <version>2.0.0</version>
     <date>2017-05-31</date>
     <description><![CDATA[
-		v2.0.2 - Added function to add hidden span to button in TextHighlight.js]]></description>
+		v2.0.2 - Added function to add hidden span to button in TextHighlight.js
+			   - Created routing for web accessibility (enhanced)]]></description>
     <company>Askia</company>
     <author><![CDATA[Clément Salomon <clement@askia.com>]]></author>
     <site>https://www.askia.com/</site>
