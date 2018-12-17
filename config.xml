@@ -7,7 +7,7 @@
   <info>
     <name>TextHighlight</name>
     <guid>9c7bb341-8653-48af-ba8c-35f58ae4d594</guid>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
     <date>2017-05-31</date>
     <description><![CDATA[
 		v2.0.2 - Added function to add hidden span to button in TextHighlight.js
@@ -20,7 +20,7 @@
       <category>General</category>
     </categories>
     <constraints>
-      <constraint on="questions" chapter="false" single="true" multiple="false" numeric="false" date="false" open="false" requireParentLoop="true" />
+      <constraint on="questions" chapter="false" single="true" multiple="false" numeric="false" date="false" open="false" requireParentLoop="true" RequireLoopDepth="true" />
       <constraint on="controls" responseblock="true" label="false" textbox="false" checkbox="false" listbox="false" radiobutton="false" />
       <constraint on="responses" max="*" min="*" />
     </constraints>
