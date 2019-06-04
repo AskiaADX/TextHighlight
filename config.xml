@@ -7,7 +7,7 @@
   <info>
     <name>TextHighlight</name>
     <guid>9c7bb341-8653-48af-ba8c-35f58ae4d594</guid>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <date>2017-05-31</date>
     <description><![CDATA[
 		v2.0.2 - Added function to add hidden span to button in TextHighlight.js
@@ -20,13 +20,13 @@
       <category>General</category>
     </categories>
     <constraints>
-      <constraint on="questions" chapter="false" single="true" multiple="false" numeric="false" date="false" open="false" requireParentLoop="true" requireLoopDepth="1" />
-      <constraint on="controls" responseblock="true" label="false" textbox="false" checkbox="false" listbox="false" radiobutton="false" />
+      <constraint on="questions" chapter="false" single="true" multiple="false" numeric="false" date="false" open="false" requireParentLoop="true" requireLoopDepth="true" />
+      <constraint on="controls" responseblock="true" label="false" textbox="false" checkbox="false" listbox="false" radiobutton="true" />
       <constraint on="responses" max="*" min="*" />
     </constraints>
   </info>
   <outputs defaultOutput="default">
-    <output id="default" manageLoopDepth="1">
+    <output id="default">
       <description><![CDATA[Default output]]></description>
       <condition><![CDATA[(Browser.Support("javascript"))]]></condition>
       <content fileName="TextHighlight.css" type="css" mode="static" position="head" />
@@ -40,7 +40,7 @@
       <content fileName="bin.png" type="image" mode="static" position="none" />
       <content fileName="garbage.png" type="image" mode="static" position="none" />
     </output>
-    <output id="fallback" manageLoopDepth="1">
+    <output id="fallback">
       <description><![CDATA[Fallback when the browser doesn't support Javascript]]></description>
       <condition><![CDATA[Not(Browser.Support("javascript"))]]></condition>
       <content fileName="single_fallback.html" type="html" mode="dynamic" position="none" />
