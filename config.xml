@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<control  xmlns="http://www.askia.com/2.1.0/ADCSchema"
+<control  xmlns="http://www.askia.com/2.2.0/ADCSchema"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://www.askia.com/2.1.0/ADCSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.1.0/ADCSchema.xsd"
-          version="2.1.0"
-          askiaCompat="5.4.2">
+          xsi:schemaLocation="http://www.askia.com/2.2.0/ADCSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.2.0/ADCSchema.xsd"
+          version="2.2.0"
+          askiaCompat="5.5.2">
   <info>
     <name>TextHighlight</name>
     <guid>9c7bb341-8653-48af-ba8c-35f58ae4d594</guid>
